@@ -25,9 +25,9 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-import akssmk.com.agriculturalapp.modals.MainListItem;
 import akssmk.com.agriculturalapp.R;
 import akssmk.com.agriculturalapp.adapters.MainAdapter;
+import akssmk.com.agriculturalapp.modals.MainListItem;
 
 
 public class MainActivity extends AppCompatActivity
@@ -37,17 +37,15 @@ public class MainActivity extends AppCompatActivity
     private RecyclerView recyclerView;
     private MainAdapter adapter;
 
-    private Integer[] imageUrls = {R.raw.crop_production_opt, R.raw.treat, R.raw.shc2, R.drawable.production_main, R.drawable.horticulture_main, R.raw.govp, R.drawable.weather, R.drawable.extra};
+    private Integer[] imageUrls = {R.raw.shc2, R.drawable.production_main, R.raw.govp, R.drawable.weather, R.drawable.extra};
 
-    private Integer[] hindiTexts = {R.string.crop_production_card_title_hi, R.string.treatment_card_title_hi,
-            R.string.storage_card_title_hi, R.string.survey_card_title_hi,
-            R.string.horticulture_card_title_hi, R.string.policy_card_title_hi, R.string.about_text, R.string.policy_card_title_en, R.string.about};
+    private Integer[] hindiTexts = {
+            R.string.storage_card_title_hi, R.string.survey_card_title_hi, R.string.policy_card_title_hi, R.string.about_text, R.string.policy_card_title_en, R.string.about};
 
-    private Integer[] englishTexts = {R.string.crop_production_card_title_en, R.string.treatment_card_title_en,
-            R.string.storage_card_title_en, R.string.survey_card_title_en,
-            R.string.horticulture_card_title_en, R.string.policy_card_title_en, R.string.about, R.string.policy_card_title_en, R.string.about};
+    private Integer[] englishTexts = {
+            R.string.storage_card_title_en, R.string.survey_card_title_en, R.string.policy_card_title_en, R.string.about, R.string.policy_card_title_en, R.string.about};
 
-    private String[] backgroundColors = {"#35e372", "#a4f075", "#ffff4d", "#70dbdb", "#cef63c", "#ff9f80", "#ffffff", "#ffffff"};
+    private String[] backgroundColors = {"#ffff4d", "#70dbdb", "#ff9f80", "#ffffff", "#ffffff"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,11 +55,8 @@ public class MainActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
 
         Intent[] links = {
-                new Intent(MainActivity.this, CropProductionActivity.class),
-                new Intent(MainActivity.this, SelectProblem.class),
                 new Intent(MainActivity.this, SoilHealthActivity.class),
                 new Intent(MainActivity.this, SurveyActivity.class),
-                new Intent(MainActivity.this, HorticultureActivity.class),
                 new Intent(MainActivity.this, Select_Policy.class),
                 new Intent(MainActivity.this, weather.class),
                 new Intent(MainActivity.this, extra.class)
