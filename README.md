@@ -13,13 +13,15 @@ https://www.hackerearth.com/sprints/digital-india-hackathon/?utm_source=website&
 
 **Team Members:**
 
-1.[Akhilesh Kumar](https://github.com/akhilesh26)
+1.[Shivam Kumar](https://github.com/akhilesh26)
 
-2.[Sukhbir Singh](https://github.com/sukhbir-singh)
+2.[Pranav](https://github.com/sukhbir-singh)
 
-3.[Mukesh Kharita](https://github.com/mukeshkharita)
+3.[ishika](https://github.com/mukeshkharita)
 
-4.[Sahil Ramola](https://github.com/RamolaWeb)
+4.[Chirag](https://github.com/RamolaWeb)
+
+5.Harshit
 
 
 **Resources Used:**
