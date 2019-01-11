@@ -17,7 +17,7 @@ import akssmk.com.agriculturalapp.R;
 import akssmk.com.agriculturalapp.modals.MainListItem;
 
 /**
- * Created by sukhbir on 6/8/16.
+ * Created by shivamkumard107 on 6/8/16.
  */
 public class HorticultureAdapter extends RecyclerView.Adapter<HorticultureAdapter.viewHolder> {
 private ArrayList<MainListItem> list=new ArrayList<>();

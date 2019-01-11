@@ -17,7 +17,7 @@ import akssmk.com.agriculturalapp.R;
 import akssmk.com.agriculturalapp.adapters.ViewPagerAdapter;
 
 /**
- * Created by sukhbir on 15/8/16.
+ * Created by shivamkumard107 on 15/8/16.
  */
 public class BazaarActivity2 extends AppCompatActivity {
 

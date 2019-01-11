@@ -8,7 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import akssmk.com.agriculturalapp.R;
 
 /**
- * Created by sukhbir on 3/7/16.
+ * Created by shivamkumard107 on 3/7/16.
  */
 public class SplashActivity extends AppCompatActivity {
 

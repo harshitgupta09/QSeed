@@ -159,7 +159,10 @@
                 android:value=".activities.MainActivity" />
         </activity>
         <activity android:name=".activities.weather" />
-        <activity android:name=".activities.extra"></activity>
+        <activity android:name=".activities.extra" />
+        <activity android:name=".activities.SeedPredictionActivity" />
+        <activity android:name=".activities.ColdStorageActivity" />
+        <activity android:name=".activities.PaytmActivity"></activity>
     </application>
 
 </manifest>

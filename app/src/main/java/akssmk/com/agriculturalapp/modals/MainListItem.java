@@ -3,7 +3,7 @@ package akssmk.com.agriculturalapp.modals;
 import android.content.Intent;
 
 /**
- * Created by sukhbir on 7/8/16.
+ * Created by shivamkumard107 on 7/8/16.
  */
 public class MainListItem {
     private int imageUrl;

@@ -15,7 +15,7 @@ import akssmk.com.agriculturalapp.R;
 import akssmk.com.agriculturalapp.modals.HorticultureDetailItem;
 
 /**
- * Created by sukhbir on 6/8/16.
+ * Created by shivamkumard107 on 6/8/16.
  */
 public class HorticultureDetailAdapter extends RecyclerView.Adapter<HorticultureDetailAdapter.viewHolder> {
 private ArrayList<HorticultureDetailItem> list=new ArrayList<>();

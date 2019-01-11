@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import akssmk.com.agriculturalapp.modals.ItemHealthCard;
 
 /**
- * Created by sukhbir on 19/8/16.
+ * Created by shivamkumard107 on 19/8/16.
  */
 public class SqliteHelper extends SQLiteAssetHelper {
 

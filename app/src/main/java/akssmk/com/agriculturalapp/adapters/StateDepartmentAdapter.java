@@ -14,7 +14,7 @@ import akssmk.com.agriculturalapp.activities.GraphActivity;
 import akssmk.com.agriculturalapp.activities.WebActivity;
 
 /**
- * Created by sukhbir on 6/8/16.
+ * Created by shivamkumard107 on 6/8/16.
  */
 public class StateDepartmentAdapter extends RecyclerView.Adapter<StateDepartmentAdapter.viewHolder> {
     private String[] array;

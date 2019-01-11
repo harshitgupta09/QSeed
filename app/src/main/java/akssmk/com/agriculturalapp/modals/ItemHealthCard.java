@@ -1,7 +1,7 @@
 package akssmk.com.agriculturalapp.modals;
 
 /**
- * Created by sukhbir on 20/8/16.
+ * Created by shivamkumard107 on 20/8/16.
  */
 public class ItemHealthCard {
     private String id,name;

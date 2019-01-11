@@ -16,7 +16,7 @@ import akssmk.com.agriculturalapp.modals.MainListItem;
 import akssmk.com.agriculturalapp.R;
 
 /**
- * Created by sukhbir on 6/8/16.
+ * Created by shivamkumard107 on 6/8/16.
  */
 public class MainAdapter extends RecyclerView.Adapter<MainAdapter.viewHolder> {
     private ArrayList<MainListItem> list = new ArrayList<>();

@@ -37,15 +37,15 @@ public class MainActivity extends AppCompatActivity
     private RecyclerView recyclerView;
     private MainAdapter adapter;
 
-    private Integer[] imageUrls = {R.raw.shc2, R.drawable.production_main, R.raw.govp, R.drawable.weather, R.drawable.extra};
+    private Integer[] imageUrls = {R.drawable.ic_seed_prediction, R.drawable.ic_cold_storage, R.raw.shc2, R.drawable.production_main, R.raw.govp, R.drawable.weather, R.drawable.ic_paytm, R.drawable.extra};
 
     private Integer[] hindiTexts = {
-            R.string.storage_card_title_hi, R.string.survey_card_title_hi, R.string.policy_card_title_hi, R.string.about_text, R.string.policy_card_title_en, R.string.about};
+            R.string.seed_prediction_hi, R.string.cold_storage_hi, R.string.storage_card_title_hi, R.string.survey_card_title_hi, R.string.policy_card_title_hi, R.string.weather_hi, R.string.paytm_karo_hi, R.string.extra_info_hi};
 
     private Integer[] englishTexts = {
-            R.string.storage_card_title_en, R.string.survey_card_title_en, R.string.policy_card_title_en, R.string.about, R.string.policy_card_title_en, R.string.about};
+            R.string.seed_prediction_en, R.string.cold_storage_en, R.string.storage_card_title_en, R.string.survey_card_title_en, R.string.policy_card_title_en, R.string.weather_en, R.string.paytm_karo_en, R.string.extra_info_en};
 
-    private String[] backgroundColors = {"#ffff4d", "#70dbdb", "#ff9f80", "#ffffff", "#ffffff"};
+    private String[] backgroundColors = {"#ffff4d", "#70dbdb", "#ff9f80", "#D3D3D3", "#E94B3C", "#00A591", "#FAE03C", "#7CFC00"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,10 +55,13 @@ public class MainActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
 
         Intent[] links = {
+                new Intent(MainActivity.this, SeedPredictionActivity.class),
+                new Intent(MainActivity.this, ColdStorageActivity.class),
                 new Intent(MainActivity.this, SoilHealthActivity.class),
                 new Intent(MainActivity.this, SurveyActivity.class),
                 new Intent(MainActivity.this, Select_Policy.class),
                 new Intent(MainActivity.this, weather.class),
+                new Intent(MainActivity.this, PaytmActivity.class),
                 new Intent(MainActivity.this, extra.class)
         };
 
@@ -83,13 +86,13 @@ public class MainActivity extends AppCompatActivity
 
         Log.v("version", Build.VERSION.SDK_INT + "");
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
         findViewById(R.id.progress).setVisibility(View.GONE);
@@ -97,7 +100,7 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
@@ -173,7 +176,7 @@ public class MainActivity extends AppCompatActivity
 
         }
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }

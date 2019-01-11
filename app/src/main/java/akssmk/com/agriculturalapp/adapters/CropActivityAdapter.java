@@ -14,7 +14,7 @@ import akssmk.com.agriculturalapp.modals.CropDetailItem;
 import akssmk.com.agriculturalapp.R;
 
 /**
- * Created by sukhbir on 6/8/16.
+ * Created by shivamkumard107 on 6/8/16.
  */
 public class CropActivityAdapter extends RecyclerView.Adapter<CropActivityAdapter.viewHolder> {
 private ArrayList<CropDetailItem> list=new ArrayList<>();

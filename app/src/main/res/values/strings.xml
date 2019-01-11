@@ -75,6 +75,21 @@
     <string name="policy_card_title_en">Government Schemes</string>
     <string name="policy_card_title_hi"> सरकार की योजनाएं  </string>
 
+    <string name="paytm_karo_en">PayTm Karo</string>
+    <string name="paytm_karo_hi"> पेटीएम करें </string>
+
+    <string name="cold_storage_en">Cold Storage</string>
+    <string name="cold_storage_hi">शीतगृह</string>
+
+    <string name="seed_prediction_en">Seed Prediction System</string>
+    <string name="seed_prediction_hi">बीज भविष्यवाणी प्रणाली</string>
+
+    <string name="extra_info_en">Extra Information</string>
+    <string name="extra_info_hi">अतिरिक्त जानकारी</string>
+
+    <string name="weather_en">Weather</string>
+    <string name="weather_hi">मौसम</string>
+
 
     <string name="horticulture_item1_en">Mango</string>
 

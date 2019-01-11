@@ -10,7 +10,7 @@ import java.util.Calendar;
 import java.util.Date;
 
 /**
- * Created by sukhbir on 15/8/16.
+ * Created by shivamkumard107 on 15/8/16.
  */
 public class ViewPagerAdapter extends FragmentStatePagerAdapter {
 

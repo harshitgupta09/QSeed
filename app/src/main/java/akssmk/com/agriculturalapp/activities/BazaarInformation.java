@@ -38,7 +38,7 @@ import akssmk.com.agriculturalapp.application.MySingleton;
 import akssmk.com.agriculturalapp.utilities.Connection;
 
 /**
- * Created by sukhbir on 14/8/16.
+ * Created by shivamkumard107 on 14/8/16.
  */
 public class BazaarInformation extends AppCompatActivity {
 
