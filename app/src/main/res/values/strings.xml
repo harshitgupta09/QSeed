@@ -57,23 +57,23 @@
     <string name="action_settings">Call Kisan Help Centre</string>
     <string name="title_activity_bazar__rate__select">Bazar_Rate_Select</string>
 
-    <string name="crop_production_card_title_en">Crop Production Methods</string>
-    <string name="crop_production_card_title_hi">खेती की उन्‍नत विधियां</string>
+    <string name="crop_production_card_title_en">Crop Production Methods\n</string>
+    <string name="crop_production_card_title_hi">\nखेती की उन्‍नत विधियां</string>
 
     <string name="treatment_card_title_en">Crop Treatment Method</string>
-    <string name="treatment_card_title_hi">प्रमुख समस्याएं एवं निवारण</string>
+    <string name="treatment_card_title_hi">\nप्रमुख समस्याएं एवं निवारण</string>
 
     <string name="storage_card_title_en">Soil Health Card </string>
-    <string name="storage_card_title_hi">मृदा स्वास्थ्य कार्डं</string>
+    <string name="storage_card_title_hi">\nमृदा स्वास्थ्य कार्डं</string>
 
-    <string name="survey_card_title_en"> Production Details</string>
+    <string name="survey_card_title_en">Production Details</string>
     <string name="survey_card_title_hi">उत्पादन का विवरण </string>
 
     <string name="horticulture_card_title_en">Horticulture Methods</string>
     <string name="horticulture_card_title_hi">बागवानी की उन्‍नत विधियां</string>
 
     <string name="policy_card_title_en">Government Schemes</string>
-    <string name="policy_card_title_hi"> सरकार की योजनाएं  </string>
+    <string name="policy_card_title_hi"> \nसरकार की योजनाएं  </string>
 
     <string name="paytm_karo_en">PayTm Karo</string>
     <string name="paytm_karo_hi"> पेटीएम करें </string>

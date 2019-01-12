@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -29,7 +30,8 @@ public class ExtrasActivity extends AppCompatActivity {
     private Integer[] englishTexts = {R.string.crop_production_card_title_en, R.string.treatment_card_title_en, R.string.storage_card_title_en, R.string.survey_card_title_en, R.string.policy_card_title_en,
             R.string.horticulture_card_title_en};
 
-    private String[] backgroundColors = {"#35e372", "#a4f075", "#ff9f80", "#D3D3D3", "#E94B3C", "#cef63c"};
+//    private String[] backgroundColors = {"#35e372", "#a4f075", "#ff9f80", "#D3D3D3", "#E94B3C", "#cef63c"};
+    private String[] backgroundColors = {"#ffffff", "#ffffff", "#ffffff", "#ffffff", "#ffffff","#ffffff"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,7 +66,8 @@ public class ExtrasActivity extends AppCompatActivity {
         adapter = new MainAdapter(this, list);
 
         recyclerView = (RecyclerView) findViewById(R.id.recycler);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        //recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setLayoutManager(new GridLayoutManager(this,2));
         recyclerView.setAdapter(adapter);
 
         Log.v("version", Build.VERSION.SDK_INT + "");

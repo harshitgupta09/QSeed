@@ -14,45 +14,52 @@
         android:id="@+id/linear"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:background="#d57fe4">
+        android:background="@color/color_f3f7f8"
+        android:orientation="horizontal">
+
         <ImageView
-            android:layout_margin="10dp"
+            android:id="@+id/imageView"
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:id="@+id/imageView"
+            android:layout_margin="10dp"
             android:scaleType="centerCrop"
-            android:src="@raw/wheat"/>
+            android:src="@raw/wheat" />
 
         <LinearLayout
-            android:layout_gravity="center"
-            android:orientation="vertical"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
             <TextView
                 android:id="@+id/hindi_title"
-                android:layout_marginLeft="7dp"
-                android:layout_marginRight="7dp"
-                android:layout_gravity="center"
-                android:padding="5dp"
-                android:layout_weight="1"
-                android:textColor="#505050"
-                android:textSize="18sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="hindi text"/>
+                android:layout_gravity="center"
+                android:layout_marginLeft="7dp"
+                android:layout_marginRight="7dp"
+                android:layout_weight="1"
+                android:padding="5dp"
+                android:text="hindi text"
+                android:textAllCaps="true"
+                android:textColor="#505050"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
             <TextView
                 android:id="@+id/english_title"
-                android:layout_marginLeft="7dp"
-                android:layout_marginRight="7dp"
-                android:layout_gravity="center"
-                android:padding="5dp"
-                android:layout_weight="1"
-                android:textColor="#505050"
-                android:textSize="18sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="english text"/>
+                android:layout_gravity="center"
+                android:layout_marginLeft="7dp"
+                android:layout_marginRight="7dp"
+                android:layout_weight="1"
+                android:padding="5dp"
+                android:text="english text"
+                android:textAllCaps="true"
+                android:textColor="#505050"
+                android:textSize="18sp"
+                android:textStyle="bold" />
         </LinearLayout>
 
     </LinearLayout>
