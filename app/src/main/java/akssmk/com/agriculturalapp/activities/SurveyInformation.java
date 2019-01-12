@@ -64,7 +64,7 @@ public class SurveyInformation extends AppCompatActivity {
                     Intent i = new Intent(SurveyInformation.this,GraphActivity.class);
                     Bundle extra=new Bundle();
                     extra.putSerializable("All",items);
-                    i.putExtra("extra",extra);
+                    i.putExtra("ExtrasActivity",extra);
                     startActivity(i);
                 }
 

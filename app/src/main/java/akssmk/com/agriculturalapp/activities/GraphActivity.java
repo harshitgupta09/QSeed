@@ -41,7 +41,7 @@ public class GraphActivity extends AppCompatActivity {
         Log.v("hi", "111");
         
         if(in != null){
-            Bundle extra=getIntent().getBundleExtra("extra");
+            Bundle extra=getIntent().getBundleExtra("ExtrasActivity");
             items = (ArrayList<ItemSurvey>) extra.getSerializable("All");
             //Log.v("data123",items.get(0).getYear());
         }

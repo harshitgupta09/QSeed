@@ -16,20 +16,20 @@ import akssmk.com.agriculturalapp.R;
 import akssmk.com.agriculturalapp.adapters.MainAdapter;
 import akssmk.com.agriculturalapp.modals.MainListItem;
 
-public class extra extends AppCompatActivity {
+public class ExtrasActivity extends AppCompatActivity {
 
     private ArrayList<MainListItem> list;
     private RecyclerView recyclerView;
     private MainAdapter adapter;
 
-    private Integer[] imageUrls = {R.raw.crop_production_opt, R.raw.treat, R.drawable.horticulture_main};
+    private Integer[] imageUrls = {R.raw.crop_production_opt, R.raw.treat, R.raw.shc2, R.drawable.production_main, R.raw.govp, R.drawable.horticulture_main};
 
-    private Integer[] hindiTexts = {R.string.crop_production_card_title_hi, R.string.treatment_card_title_hi,
+    private Integer[] hindiTexts = {R.string.crop_production_card_title_hi, R.string.treatment_card_title_hi, R.string.storage_card_title_hi, R.string.survey_card_title_hi, R.string.policy_card_title_hi,
             R.string.horticulture_card_title_hi};
-    private Integer[] englishTexts = {R.string.crop_production_card_title_en, R.string.treatment_card_title_en,
+    private Integer[] englishTexts = {R.string.crop_production_card_title_en, R.string.treatment_card_title_en, R.string.storage_card_title_en, R.string.survey_card_title_en, R.string.policy_card_title_en,
             R.string.horticulture_card_title_en};
 
-    private String[] backgroundColors = {"#35e372", "#a4f075", "#cef63c"};
+    private String[] backgroundColors = {"#35e372", "#a4f075", "#ff9f80", "#D3D3D3", "#E94B3C", "#cef63c"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,9 +40,12 @@ public class extra extends AppCompatActivity {
 
 
         Intent[] links = {
-                new Intent(extra.this, CropProductionActivity.class),
-                new Intent(extra.this, SelectProblem.class),
-                new Intent(extra.this, HorticultureActivity.class)
+                new Intent(ExtrasActivity.this, CropProductionActivity.class),
+                new Intent(ExtrasActivity.this, SelectProblem.class),
+                new Intent(ExtrasActivity.this, SoilHealthActivity.class),
+                new Intent(ExtrasActivity.this, SurveyActivity.class),
+                new Intent(ExtrasActivity.this, Select_Policy.class),
+                new Intent(ExtrasActivity.this, HorticultureActivity.class)
         };
 
         list = new ArrayList<>();

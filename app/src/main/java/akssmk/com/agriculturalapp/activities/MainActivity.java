@@ -37,15 +37,15 @@ public class MainActivity extends AppCompatActivity
     private RecyclerView recyclerView;
     private MainAdapter adapter;
 
-    private Integer[] imageUrls = {R.drawable.ic_seed_prediction, R.drawable.ic_cold_storage, R.raw.shc2, R.drawable.production_main, R.raw.govp, R.drawable.weather, R.drawable.ic_paytm, R.drawable.extra};
+    private Integer[] imageUrls = {R.drawable.ic_seed_prediction, R.drawable.ic_cold_storage,  R.drawable.weather, R.drawable.ic_paytm, R.drawable.extra};
 
     private Integer[] hindiTexts = {
-            R.string.seed_prediction_hi, R.string.cold_storage_hi, R.string.storage_card_title_hi, R.string.survey_card_title_hi, R.string.policy_card_title_hi, R.string.weather_hi, R.string.paytm_karo_hi, R.string.extra_info_hi};
+            R.string.seed_prediction_hi, R.string.cold_storage_hi, R.string.weather_hi, R.string.paytm_karo_hi, R.string.extra_info_hi};
 
     private Integer[] englishTexts = {
-            R.string.seed_prediction_en, R.string.cold_storage_en, R.string.storage_card_title_en, R.string.survey_card_title_en, R.string.policy_card_title_en, R.string.weather_en, R.string.paytm_karo_en, R.string.extra_info_en};
+            R.string.seed_prediction_en, R.string.cold_storage_en, R.string.weather_en, R.string.paytm_karo_en, R.string.extra_info_en};
 
-    private String[] backgroundColors = {"#ffff4d", "#70dbdb", "#ff9f80", "#D3D3D3", "#E94B3C", "#00A591", "#FAE03C", "#7CFC00"};
+    private String[] backgroundColors = {"#ffff4d", "#70dbdb", "#00A591", "#FAE03C", "#7CFC00"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,12 +57,9 @@ public class MainActivity extends AppCompatActivity
         Intent[] links = {
                 new Intent(MainActivity.this, SeedPredictionActivity.class),
                 new Intent(MainActivity.this, ColdStorageActivity.class),
-                new Intent(MainActivity.this, SoilHealthActivity.class),
-                new Intent(MainActivity.this, SurveyActivity.class),
-                new Intent(MainActivity.this, Select_Policy.class),
                 new Intent(MainActivity.this, weather.class),
                 new Intent(MainActivity.this, PaytmActivity.class),
-                new Intent(MainActivity.this, extra.class)
+                new Intent(MainActivity.this, ExtrasActivity.class)
         };
 
         list = new ArrayList<>();
