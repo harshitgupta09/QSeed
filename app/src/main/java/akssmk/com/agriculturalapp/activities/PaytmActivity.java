@@ -1,9 +1,11 @@
 package akssmk.com.agriculturalapp.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,6 +31,7 @@ public class PaytmActivity extends AppCompatActivity implements PaytmPaymentTran
 
     //the textview in the interface where we have the price
     TextView textViewPrice;
+    Button buy1, buy2, buy3, buy4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +40,10 @@ public class PaytmActivity extends AppCompatActivity implements PaytmPaymentTran
 
         //getting the textview
         textViewPrice = findViewById(R.id.textViewPrice);
+        buy1 = findViewById(R.id.buttonBuy);
+        buy2 = findViewById(R.id.buttonBuy1);
+        buy3 = findViewById(R.id.buttonBuy2);
+        buy4 = findViewById(R.id.buttonBuy3);
 
 
         //attaching a click listener to the button buy
@@ -48,7 +55,36 @@ public class PaytmActivity extends AppCompatActivity implements PaytmPaymentTran
                 generateCheckSum();
             }
         });
+        buy1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openPaytm();
+            }
+        });
+        buy2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openPaytm();
+            }
+        });
+        buy3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openPaytm();
+            }
+        });
+        buy4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openPaytm();
+            }
+        });
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
+    }
+
+    private void openPaytm() {
+        Intent launchIntent = getPackageManager().getLaunchIntentForPackage("net.one97.paytm");
+        startActivity( launchIntent );
     }
 
     @Override
@@ -134,7 +170,7 @@ CHECKSUMHASH = gpcvxl9WjmRYKp5Quvap3VfBHedzkfp69TX3y14qJz/iypvVEGXQwj1aSNw0XaOu2
         });
     }
 
-//    private static String getCorrectHash(String checksumHash) {
+    //    private static String getCorrectHash(String checksumHash) {
 //        String hash = "";
 //        for (int i = 0; i < checksumHash.length(); i++) {
 //            if (checksumHash.charAt(i) == '/')
@@ -164,7 +200,7 @@ CHECKSUMHASH = gpcvxl9WjmRYKp5Quvap3VfBHedzkfp69TX3y14qJz/iypvVEGXQwj1aSNw0XaOu2
         paramMap.put("CHANNEL_ID", "WAP");
         paramMap.put("TXN_AMOUNT", paytm.getTxnAmount());
         paramMap.put("WEBSITE", paytm.getWebsite());
-        paramMap.put("CALLBACK_URL", "https://securegw.paytm.in/theia/paytmCallback?ORDER_ID="+paytm.getOrderId());
+        paramMap.put("CALLBACK_URL", "https://securegw.paytm.in/theia/paytmCallback?ORDER_ID=" + paytm.getOrderId());
         paramMap.put("CHECKSUMHASH", checksumHash);
         paramMap.put("INDUSTRY_TYPE_ID", "Retail");
 
