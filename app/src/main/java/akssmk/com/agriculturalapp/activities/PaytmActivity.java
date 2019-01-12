@@ -3,6 +3,7 @@ package akssmk.com.agriculturalapp.activities;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -12,7 +13,6 @@ import com.paytm.pgsdk.PaytmPGService;
 import com.paytm.pgsdk.PaytmPaymentTransactionCallback;
 
 import java.util.HashMap;
-import java.util.Map;
 
 import akssmk.com.agriculturalapp.R;
 import akssmk.com.agriculturalapp.modals.Api;
@@ -48,9 +48,14 @@ public class PaytmActivity extends AppCompatActivity implements PaytmPaymentTran
                 generateCheckSum();
             }
         });
-
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
     }
-
+    @Override
+    protected void onStart() {
+        super.onStart();
+        //initOrderId();
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
+    }
     private void generateCheckSum() {
 
         //getting the tax amount first.
@@ -75,6 +80,14 @@ public class PaytmActivity extends AppCompatActivity implements PaytmPaymentTran
                 Constants.CALLBACK_URL,
                 Constants.INDUSTRY_TYPE_ID
         );
+        Log.d("paytm_callback", paytm.getCallBackUrl());
+        Log.d("paytm_channelId", paytm.getChannelId());
+        Log.d("paytm_custId", paytm.getCustId());
+        Log.d("paytm_IndustryType", paytm.getIndustryTypeId());
+        Log.d("paytm_MID", paytm.getmId());
+        Log.d("paytm_OrderId", paytm.getOrderId());
+        Log.d("paytm_TxnAmount", paytm.getTxnAmount());
+        Log.d("paytm_website", paytm.getWebsite());
 
         //creating a call object from the apiService
         Call<Checksum> call = apiService.getChecksum(
@@ -95,6 +108,7 @@ public class PaytmActivity extends AppCompatActivity implements PaytmPaymentTran
                 //once we get the checksum we will initiailize the payment.
                 //the method is taking the checksum we got and the paytm object as the parameter
                 initializePaytmPayment(response.body().getChecksumHash(), paytm);
+                Log.d("CHECKSUMHASH_1", response.body().getChecksumHash());
             }
 
             @Override
@@ -113,20 +127,21 @@ public class PaytmActivity extends AppCompatActivity implements PaytmPaymentTran
         //PaytmPGService Service = PaytmPGService.getProductionService();
 
         //creating a hashmap and adding all the values required
-        Map<String, String> paramMap = new HashMap<>();
-        paramMap.put("MID", Constants.M_ID);
+        HashMap<String, String> paramMap = new HashMap<>();
+        paramMap.put("MID", "IEEEDT67188777807734");
         paramMap.put("ORDER_ID", paytm.getOrderId());
         paramMap.put("CUST_ID", paytm.getCustId());
-        paramMap.put("CHANNEL_ID", paytm.getChannelId());
+        paramMap.put("MOBILE_NO", "7777777777");
+        paramMap.put("EMAIL", "username@emailprovider.com");
+        paramMap.put("CHANNEL_ID", "WAP");
         paramMap.put("TXN_AMOUNT", paytm.getTxnAmount());
         paramMap.put("WEBSITE", paytm.getWebsite());
-        paramMap.put("CALLBACK_URL", paytm.getCallBackUrl());
+        paramMap.put("CALLBACK_URL", "https://securegw.paytm.in/theia/paytmCallback?ORDER_ID="+paytm.getOrderId());
         paramMap.put("CHECKSUMHASH", checksumHash);
-        paramMap.put("INDUSTRY_TYPE_ID", paytm.getIndustryTypeId());
-
+        paramMap.put("INDUSTRY_TYPE_ID", "Retail");
 
         //creating a paytm order object using the hashmap
-        PaytmOrder order = new PaytmOrder((HashMap<String, String>) paramMap);
+        PaytmOrder order = new PaytmOrder(paramMap);
 
         //intializing the paytm service
         Service.initialize(order, null);
@@ -139,18 +154,19 @@ public class PaytmActivity extends AppCompatActivity implements PaytmPaymentTran
     //all these overriden method is to detect the payment result accordingly
     @Override
     public void onTransactionResponse(Bundle bundle) {
-
         Toast.makeText(this, bundle.toString(), Toast.LENGTH_LONG).show();
     }
 
     @Override
     public void networkNotAvailable() {
         Toast.makeText(this, "Network error", Toast.LENGTH_LONG).show();
+
     }
 
     @Override
     public void clientAuthenticationFailed(String s) {
         Toast.makeText(this, s, Toast.LENGTH_LONG).show();
+        Log.d("_error_", s);
     }
 
     @Override
@@ -171,5 +187,6 @@ public class PaytmActivity extends AppCompatActivity implements PaytmPaymentTran
     @Override
     public void onTransactionCancel(String s, Bundle bundle) {
         Toast.makeText(this, s + bundle.toString(), Toast.LENGTH_LONG).show();
+        Log.d("_error_2", s);
     }
 }

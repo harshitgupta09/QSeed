@@ -34,12 +34,14 @@ public class Paytm {
 
     public Paytm(String mId, String channelId, String txnAmount, String website, String callBackUrl, String industryTypeId) {
         this.mId = mId;
-        this.orderId = generateString();
-        this.custId = generateString();
+//        this.orderId = generateString();
+//        this.custId = generateString();
+        this.orderId = "BRAINFUCK_123";
+        this.custId = "BRAINFUCK_1234";
         this.channelId = channelId;
         this.txnAmount = txnAmount;
         this.website = website;
-        this.callBackUrl = callBackUrl;
+        this.callBackUrl = callBackUrl ;
         this.industryTypeId = industryTypeId;
 
         Log.d("orderId", orderId);
