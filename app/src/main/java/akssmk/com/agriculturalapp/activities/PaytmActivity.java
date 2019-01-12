@@ -50,12 +50,14 @@ public class PaytmActivity extends AppCompatActivity implements PaytmPaymentTran
         });
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
     }
+
     @Override
     protected void onStart() {
         super.onStart();
         //initOrderId();
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
     }
+
     private void generateCheckSum() {
 
         //getting the tax amount first.
@@ -77,10 +79,8 @@ public class PaytmActivity extends AppCompatActivity implements PaytmPaymentTran
                 Constants.CHANNEL_ID,
                 txnAmount,
                 Constants.WEBSITE,
-                Constants.CALLBACK_URL,
                 Constants.INDUSTRY_TYPE_ID
         );
-        Log.d("paytm_callback", paytm.getCallBackUrl());
         Log.d("paytm_channelId", paytm.getChannelId());
         Log.d("paytm_custId", paytm.getCustId());
         Log.d("paytm_IndustryType", paytm.getIndustryTypeId());
@@ -94,11 +94,11 @@ public class PaytmActivity extends AppCompatActivity implements PaytmPaymentTran
                 paytm.getmId(),
                 paytm.getOrderId(),
                 paytm.getCustId(),
+                paytm.getIndustryTypeId(),
                 paytm.getChannelId(),
                 paytm.getTxnAmount(),
-                paytm.getWebsite(),
-                paytm.getCallBackUrl(),
-                paytm.getIndustryTypeId()
+                paytm.getWebsite()
+
         );
 
         //making the call to generate checksum
@@ -107,8 +107,24 @@ public class PaytmActivity extends AppCompatActivity implements PaytmPaymentTran
             public void onResponse(Call<Checksum> call, Response<Checksum> response) {
                 //once we get the checksum we will initiailize the payment.
                 //the method is taking the checksum we got and the paytm object as the parameter
+
+                Log.d("generated_hash", response.body().getChecksumHash());
+//                String checksum = getCorrectHash(response.body().getChecksumHash());
                 initializePaytmPayment(response.body().getChecksumHash(), paytm);
-                Log.d("CHECKSUMHASH_1", response.body().getChecksumHash());
+//                Log.d("correct_hash", checksum);
+                // Why checksum Hash mismatch always?
+                /*
+                * the hash generator server is generating hash with letters, numbers as well as /, + and =.
+                * / and + are creating the problem as when they are put in the params of the post request / is taken
+                * different meaning and is converted to some %3C. This might be the reason of hash mismatch.
+                *
+CHECKSUMHASH = kJldWvM4ACM13d6bL08sfZD5\/0tgN\/Ssdkicj3jUuurqlESnITCVg23PXpDzL6EzvwfidvrQiwfrkdstHkUSSKua9\/JHwUPYhWGIMTnAARg=
+URL encoded String is INDUSTRY_TYPE_ID=Retail&CHANNEL_ID=WAP&CHECKSUMHASH=kJldWvM4ACM13d6bL08sfZD5%5C%2F0tgN-->%5C<--(see here)-->%2F<--Ssdkicj3jUuurqlESnITCVg23PXpDzL6EzvwfidvrQiwfrkdstHkUSSKua9%5C%2FJHwUPYhWGIMTnAARg%3D&MOBILE_NO=7777777777&TXN_AMOUNT=10.00&MID=IEEEDT67188777807734&EMAIL=username%40emailprovider.com&CALLBACK_URL=https%3A%2F%2Fsecuregw.paytm.in%2Ftheia%2FpaytmCallback%3FORDER_ID%3Dea385b1a21874ca1ac6941545e858a86&CUST_ID=099c88d76a3b4d86a168a3c58cbef897&WEBSITE=APPSTAGING&ORDER_ID=ea385b1a21874ca1ac6941545e858a86
+Merchant Response is {"ORDERID":"ea385b1a21874ca1ac6941545e858a86", "MID":"IEEEDT67188777807734", "TXNAMOUNT":"10.00", "CURRENCY":"INR", "STATUS":"TXN_FAILURE", "RESPCODE":"330", "RESPMSG":"Paytm checksum mismatch.", "BANKTXNID":"", "CHECKSUMHASH":"gpcvxl9WjmRYKp5Quvap3VfBHedzkfp69TX3y14qJz/iypvVEGXQwj1aSNw0XaOu2fRE/WVZ2warHx5ClJNG0ND8pAyUbd7nlDehc/HaxSs="}
+RESPMSG = Paytm checksum mismatch.
+CHECKSUMHASH = gpcvxl9WjmRYKp5Quvap3VfBHedzkfp69TX3y14qJz/iypvVEGXQwj1aSNw0XaOu2fRE/WVZ2warHx5ClJNG0ND8pAyUbd7nlDehc/HaxSs=
+
+                * */
             }
 
             @Override
@@ -118,6 +134,18 @@ public class PaytmActivity extends AppCompatActivity implements PaytmPaymentTran
         });
     }
 
+//    private static String getCorrectHash(String checksumHash) {
+//        String hash = "";
+//        for (int i = 0; i < checksumHash.length(); i++) {
+//            if (checksumHash.charAt(i) == '/')
+//                hash = hash + "\\";
+//
+//
+//            hash = hash + (String.valueOf(checksumHash.charAt(i)));
+//        }
+//
+//        return hash;
+//    }
     private void initializePaytmPayment(String checksumHash, Paytm paytm) {
 
         //getting paytm service
@@ -140,12 +168,13 @@ public class PaytmActivity extends AppCompatActivity implements PaytmPaymentTran
         paramMap.put("CHECKSUMHASH", checksumHash);
         paramMap.put("INDUSTRY_TYPE_ID", "Retail");
 
+        Log.d("param_hash", String.valueOf(paramMap));
         //creating a paytm order object using the hashmap
         PaytmOrder order = new PaytmOrder(paramMap);
 
         //intializing the paytm service
         Service.initialize(order, null);
-
+// EV8nHTdFYpgGadeynxXCi7eaao66srxmmf/Eow43P94Ll0vfm+Q8FCoudFtDMLGNIggk/3kB+aHsrQWiQljxeOzmx5vC/mhW44ydDYg365Q=
         //finally starting the payment transaction
         Service.startPaymentTransaction(this, true, true, this);
 

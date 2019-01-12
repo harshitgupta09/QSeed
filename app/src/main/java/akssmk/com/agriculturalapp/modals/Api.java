@@ -17,10 +17,10 @@ public interface Api {
             @Field("MID") String mId,
             @Field("ORDER_ID") String orderId,
             @Field("CUST_ID") String custId,
+            @Field("INDUSTRY_TYPE_ID") String industryTypeId,
             @Field("CHANNEL_ID") String channelId,
             @Field("TXN_AMOUNT") String txnAmount,
-            @Field("WEBSITE") String website,
-            @Field("CALLBACK_URL") String callbackUrl,
-            @Field("INDUSTRY_TYPE_ID") String industryTypeId
+            @Field("WEBSITE") String website
+
     );
 }

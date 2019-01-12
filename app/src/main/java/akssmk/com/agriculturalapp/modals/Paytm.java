@@ -26,22 +26,18 @@ public class Paytm {
     @SerializedName("WEBSITE")
     String website;
 
-    @SerializedName("CALLBACK_URL")
-    String callBackUrl;
-
     @SerializedName("INDUSTRY_TYPE_ID")
     String industryTypeId;
 
-    public Paytm(String mId, String channelId, String txnAmount, String website, String callBackUrl, String industryTypeId) {
+    public Paytm(String mId, String channelId, String txnAmount, String website, String industryTypeId) {
         this.mId = mId;
 //        this.orderId = generateString();
 //        this.custId = generateString();
-        this.orderId = "BRAINFUCK_123";
-        this.custId = "BRAINFUCK_1234";
+        this.orderId = generateString();
+        this.custId = generateString();
         this.channelId = channelId;
         this.txnAmount = txnAmount;
         this.website = website;
-        this.callBackUrl = callBackUrl ;
         this.industryTypeId = industryTypeId;
 
         Log.d("orderId", orderId);
@@ -72,9 +68,6 @@ public class Paytm {
         return website;
     }
 
-    public String getCallBackUrl() {
-        return callBackUrl;
-    }
 
     public String getIndustryTypeId() {
         return industryTypeId;
