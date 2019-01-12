@@ -12,4 +12,6 @@
     <color name="splash_background">#3acfc5</color>
     <color name="splash_background_dark">#135e5a</color>
     <color name="indicator">#bec7e6</color>
+
+    <color name="graycolor">#d4d4d4</color>
 </resources>

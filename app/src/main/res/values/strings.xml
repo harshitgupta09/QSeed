@@ -818,5 +818,8 @@
     <string name="treatment_detail_title">Treatment</string>
     <string name="title_activity_state_department">State Agriculture Department</string>
     <string name="title_activity_soil_health">Soil Health Card</string>
+    <string name="post_title">Post Title...</string>
+    <string name="post_description">Post Description</string>
+    <string name="submit_text">Submit</string>
 
 </resources>

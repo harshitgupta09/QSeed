@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "50619938810",
+    "firebase_url": "https://agroapp-bbfe3.firebaseio.com",
+    "project_id": "agroapp-bbfe3",
+    "storage_bucket": "agroapp-bbfe3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:50619938810:android:718c18d7d16616db",
+        "android_client_info": {
+          "package_name": "akssmk.com.agriculturalapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "50619938810-td96op07168u6iltjdiqevetgslrabk0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "akssmk.com.agriculturalapp",
+            "certificate_hash": "990115546bc590204241af4028b314d7850680c6"
+          }
+        },
+        {
+          "client_id": "50619938810-n8k5hh1qvkdknbh78ohkm0342iqvand1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAuwcunSs_mjsJs-tXZjkhoCL5h79P4AUw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "50619938810-n8k5hh1qvkdknbh78ohkm0342iqvand1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
