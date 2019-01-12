@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity
     private RecyclerView recyclerView;
     private MainAdapter adapter;
 
-    private Integer[] imageUrls = {R.drawable.ic_seed_prediction, R.drawable.ic_cold_storage,  R.drawable.weather, R.drawable.ic_paytm, R.drawable.extra};
+    private Integer[] imageUrls = {R.drawable.wheat3, R.drawable.silo,  R.drawable.sunny, R.drawable.cash, R.drawable.extra};
 
     private Integer[] hindiTexts = {
             R.string.seed_prediction_hi, R.string.cold_storage_hi, R.string.weather_hi, R.string.paytm_karo_hi, R.string.extra_info_hi};
@@ -46,7 +46,8 @@ public class MainActivity extends AppCompatActivity
     private Integer[] englishTexts = {
             R.string.seed_prediction_en, R.string.cold_storage_en, R.string.weather_en, R.string.paytm_karo_en, R.string.extra_info_en};
 
-    private String[] backgroundColors = {"#ffff4d", "#70dbdb", "#00A591", "#FAE03C", "#7CFC00"};
+//    private String[] backgroundColors = {"#ffff4d", "#70dbdb", "#00A591", "#FAE03C", "#7CFC00"};
+private String[] backgroundColors = {"#ffffff", "#ffffff", "#ffffff", "#ffffff", "#ffffff"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

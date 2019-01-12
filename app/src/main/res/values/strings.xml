@@ -78,8 +78,8 @@
     <string name="paytm_karo_en">PayTm Karo</string>
     <string name="paytm_karo_hi"> पेटीएम करें </string>
 
-    <string name="cold_storage_en">Cold Storage</string>
-    <string name="cold_storage_hi">शीतगृह</string>
+    <string name="cold_storage_en">Cold Storage\n</string>
+    <string name="cold_storage_hi">\nशीतगृह</string>
 
     <string name="seed_prediction_en">Seed Prediction System</string>
     <string name="seed_prediction_hi">बीज भविष्यवाणी प्रणाली</string>
