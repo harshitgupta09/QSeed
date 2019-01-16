@@ -24,8 +24,7 @@
                 android:layout_width="120dp"
                 android:layout_height="90dp"
                 android:background="@drawable/mung_bean"
-                android:padding="4dp"
-                />
+                android:padding="4dp" />
 
             <TextView
                 android:id="@+id/textViewTitle"
@@ -45,7 +44,7 @@
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="5dp"
                 android:layout_toRightOf="@id/imageView"
-                android:text="13.3 Inch, 256 GB"
+                android:text="Grofers India Pvt. Ltd., 2016-2018"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Small" />
 
             <TextView
@@ -71,7 +70,7 @@
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="5dp"
                 android:layout_toRightOf="@id/imageView"
-                android:text="10.00"
+                android:text="99.00"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
                 android:textStyle="bold" />
 
@@ -81,6 +80,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/textViewPrice"
                 android:layout_toRightOf="@id/imageView"
+                android:background="@color/colorAccent"
                 android:text="Buy" />
         </RelativeLayout>
 
@@ -117,7 +117,7 @@
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="5dp"
                 android:layout_toRightOf="@id/imageView1"
-                android:text="13.3 Inch, 256 GB"
+                android:text="Supermarket Grocery Supplies Pvt Ltd"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Small" />
 
             <TextView
@@ -143,7 +143,7 @@
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="5dp"
                 android:layout_toRightOf="@id/imageView1"
-                android:text="10.00"
+                android:text="119.00"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
                 android:textStyle="bold" />
 
@@ -153,6 +153,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/textViewPrice1"
                 android:layout_toRightOf="@id/imageView1"
+                android:background="@color/colorAccent"
                 android:text="Buy" />
         </RelativeLayout>
 
@@ -189,7 +190,7 @@
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="5dp"
                 android:layout_toRightOf="@id/imageView2"
-                android:text="13.3 Inch, 256 GB"
+                android:text="Grofers India Pvt. Ltd., 2016-2018"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Small" />
 
             <TextView
@@ -215,7 +216,7 @@
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="5dp"
                 android:layout_toRightOf="@id/imageView2"
-                android:text="10.00"
+                android:text="39.00"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
                 android:textStyle="bold" />
 
@@ -225,6 +226,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/textViewPrice2"
                 android:layout_toRightOf="@id/imageView2"
+                android:background="@color/colorAccent"
                 android:text="Buy" />
         </RelativeLayout>
 
@@ -260,7 +262,7 @@
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="5dp"
                 android:layout_toRightOf="@id/imageView3"
-                android:text="13.3 Inch, 256 GB"
+                android:text="Supermarket Grocery Supplies Pvt Ltd"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Small" />
 
             <TextView
@@ -286,7 +288,7 @@
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="5dp"
                 android:layout_toRightOf="@id/imageView3"
-                android:text="10.00"
+                android:text="59.00"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
                 android:textStyle="bold" />
 
@@ -296,6 +298,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/textViewPrice3"
                 android:layout_toRightOf="@id/imageView3"
+                android:background="@color/colorAccent"
                 android:text="Buy" />
         </RelativeLayout>
     </RelativeLayout>
